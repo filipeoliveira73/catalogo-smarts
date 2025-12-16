@@ -1,49 +1,67 @@
+/* eslint-disable @next/next/no-img-element */
 // src/components/Header.tsx
-'use client';
+"use client";
 
-import styled from 'styled-components';
-import Link from 'next/link';
-
-const HeaderContainer = styled.header`
-  background-color: var(--secondary-color);
-  padding: 1.5rem 2rem;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  gap: 2rem;
-`;
-
-const NavLink = styled(Link)`
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: color 0.2s ease-in-out;
-
-  &:hover {
-    color: var(--primary-color);
-  }
-`;
+import { useState } from "react";
+import {
+  ContainerIcon,
+  DesktopNav,
+  Hamburger,
+  HeaderContainer,
+  MobileNav,
+  NavLink,
+  TitleLogo,
+} from "./styles";
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <HeaderContainer>
-      <NavLink href="/">
-        Catálogo Smarts
-      </NavLink>
-      <Nav>
+      <ContainerIcon>
+        <img src="/logoicon.png" alt="terco" />
+        <TitleLogo>Catálogo da fé</TitleLogo>
+      </ContainerIcon>
+
+      <DesktopNav>
         <NavLink href="/">Home</NavLink>
-        <NavLink href="/smartphones">Smartphones</NavLink>
-        <NavLink href="/smarttvs">TVs</NavLink>
-        <NavLink href="/notebooks">Notebooks</NavLink>
+        <NavLink href="/books">Livros</NavLink>
+        <NavLink href="/shirts">Camisetas</NavLink>
+        <NavLink href="/thirds">Terços</NavLink>
         <NavLink href="/sobre">Sobre</NavLink>
-      </Nav>
+        {/* <NavLink href="/childrens">Infantil</NavLink> */}
+      </DesktopNav>
+
+      <Hamburger onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </Hamburger>
+
+      <MobileNav isOpen={isOpen}>
+        <NavLink href="/" onClick={toggleMenu}>
+          Home
+        </NavLink>
+        <NavLink href="/books" onClick={toggleMenu}>
+          Livros
+        </NavLink>
+        <NavLink href="/shirts" onClick={toggleMenu}>
+          Camisetas
+        </NavLink>
+        <NavLink href="/thirds" onClick={toggleMenu}>
+          Terços
+        </NavLink>
+        <NavLink href="/childrens" onClick={toggleMenu}>
+          Infantil
+        </NavLink>
+        <NavLink href="/sobre" onClick={toggleMenu}>
+          Sobre
+        </NavLink>
+      </MobileNav>
     </HeaderContainer>
   );
 };

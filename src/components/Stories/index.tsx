@@ -8,7 +8,7 @@ import Slider from 'react-slick';
 
 const Stories: React.FC = () => {
 
-  const bannerSettings = {
+/*   const bannerSettings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -16,7 +16,7 @@ const Stories: React.FC = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-  };
+  }; */
 
   const settings = {
     dots: false,

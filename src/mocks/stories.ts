@@ -9,32 +9,22 @@ interface Story {
 export const stories: Story[] = [
   {
     id: 1,
-    icon: '/list.svg',
-    description: 'Selecionados',
+    icon: '/icons8-casa.svg',
+    description: 'Para casa',
   },
   {
     id: 2,
-    icon: '/prices.svg',
-    description: 'Mais vendidos',
+    icon: '/icons8-para-voce.svg',
+    description: 'Para você',
   },
   {
     id: 3,
-    icon: '/moeda.svg',
-    description: 'Ofertas',
+    icon: '/icons8-cursor-da-mao.svg',
+    description: 'Selecionados',
   },
   {
     id: 4,
-    icon: '/word.svg',
-    description: 'Novidades',
-  },
-  {
-    id: 5,
-    icon: '/engeny.svg',
-    description: 'Eletrônicos',
-  },
-  {
-    id: 6,
-    icon: '/robo.svg',
-    description: 'Tecnologia',
+    icon: '/icons8-marcador.svg',
+    description: 'Livros',
   },
 ];

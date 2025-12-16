@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={nunito.className}>
+      <body className={nunito?.className}>
         <StyledComponentsRegistry>
           <GlobalStyles />
           <Header />

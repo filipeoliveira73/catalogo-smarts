@@ -1,59 +1,65 @@
-/* eslint-disable @next/next/no-img-element */
 // src/components/Footer.tsx
-'use client';
+/* eslint-disable @next/next/no-img-element */
+"use client";
+import Slider from "react-slick";
+import {
+  bannerSettings,
+  ContentOne,
+  ContentTwo,
+  MainBanner,
+  SubComponentFlex,
+  SubComponentFlexAlter,
+  SubContent,
+  SubTitle,
+  Title,
+} from "./styles";
 
-import styled from 'styled-components';
-import Slider from 'react-slick';
-import { Product, mockBanners } from '@/mocks/products';
+export const Banner1 = () => {
+  return (
+    <ContentOne>
+      <SubComponentFlex>
+        <SubContent>
+          <Title>Seja bem vindo ao seu Catálogo da Fé</Title>
+        </SubContent>
+        <img src="/terco-img.png" alt="terco" />
+      </SubComponentFlex>
+    </ContentOne>
+  );
+};
 
-
-const MainBanner = styled.div`
-  margin-bottom: 2rem;
-  border: none;
-
-  .slick-dots {
-    bottom: 15px;
-  }
-
-  .slick-dots li button:before {
-    color: white;
-  }
-`;
-
-const Content = styled.div`
-  /* height: 233px; */
-    border: none;
-
-    img {
-      width: 100%;
-      height: 233px;
-      height: auto;
-      border-radius: 4px;
-    }
-`;
-
-  const bannerSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-  };
+export const Banner2 = () => {
+  return (
+    <ContentTwo>
+      <SubComponentFlexAlter>
+        <SubContent>
+          <Title>Presentes que evangelizam</Title>
+          <SubTitle>
+            {"Um presente que evangeliza,"}
+          </SubTitle>
+           <SubTitle>
+            {" toca a alma e aproxima do céu."}
+          </SubTitle>
+        </SubContent>
+        <img src="/presente.png" alt="presente" />
+      </SubComponentFlexAlter>
+    </ContentTwo>
+  );
+};
 
 export const SliderComponent = () => {
   return (
-      <MainBanner>
-        <Slider {...bannerSettings}>
-          {mockBanners.map((banner: Product) => (
+    <MainBanner>
+      <Slider {...bannerSettings}>
+        {/* {mockBanners.map((banner: Product) => (
             <Content key={banner.id}>
               <a href={banner.link}>
                 <img src={banner.image} alt={banner.name} />
               </a>
             </Content>
-          ))}
-        </Slider>
-      </MainBanner>
+          ))} */}
+        <Banner1 />
+        <Banner2 />
+      </Slider>
+    </MainBanner>
   );
 };
