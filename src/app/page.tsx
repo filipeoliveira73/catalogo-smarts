@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { mockProducts } from "@/mocks/products";
+import { mockCamisetas, mockProducts, mockTercos } from "@/mocks/products";
 import { ProductCarousel } from "@/components/ProductCarousel";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,16 +16,6 @@ import {
 } from "./styles";
 import Stories from "@/components/Stories";
 
-const productsSmartphones = mockProducts.filter((p) =>
-  p.name.includes("Smartphone")
-);
-const productsSmartTvs = mockProducts.filter((p) =>
-  p.name.includes("Smart TV")
-);
-const productsNotebooks = mockProducts.filter((p) =>
-  p.name.includes("Notebook")
-);
-
 export default function HomePage() {
   return (
     <PageContainer>
@@ -35,8 +25,8 @@ export default function HomePage() {
 
       <SeparatorSections>
         <ProductCarousel
-          title="Destaques da Semana"
-          products={productsSmartphones}
+          title="Livros católicos"
+          products={mockProducts}
         />
       </SeparatorSections>
 
@@ -50,13 +40,13 @@ export default function HomePage() {
       </SectionMedioBanner> */}
 
       <SeparatorSections>
-        <ProductCarousel title="Camisetas que evangelizam" products={productsSmartTvs} />
+        <ProductCarousel title="Camisetas que evangelizam" products={mockCamisetas} />
       </SeparatorSections>
 
       <SeparatorSections>
         <ProductCarousel
           title="Terços e devocionais"
-          products={productsNotebooks}
+          products={mockTercos}
         />
       </SeparatorSections>
       

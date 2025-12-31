@@ -25,6 +25,13 @@ export const CardContainer = styled.div`
     height: auto;
     border-radius: 4px;
     margin-bottom: 1rem;
+    max-height: 245px;
+  }
+
+  @media (max-width: 1025px) {
+    img {
+      max-height: 160px;
+    }
   }
 `;
 
